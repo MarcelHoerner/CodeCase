@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#314672">
+    <TableRow>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Mannheim"
+            android:id="@+id/name"
+            android:layout_column="1"
+            android:paddingRight="10dp"
+            android:textColor="#9b9d9f"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="25 °C"
+            android:textSize="20dp"
+            android:id="@+id/temp"
+            android:layout_column="3"
+            android:paddingRight="10dp"
+            android:textColor="#4eb7f6"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="cloudy"
+            android:id="@+id/type"
+            android:layout_column="6"
+            android:paddingRight="10dp"
+            android:textColor="#4eb7f6"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="91%"
+            android:id="@+id/humi"
+            android:layout_column="3"
+            android:paddingRight="10dp"
+            android:textColor="#4eb7f6"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="3.1 m/s"
+            android:id="@+id/wind"
+            android:layout_column="6"
+            android:paddingRight="10dp"
+            android:textColor="#4eb7f6"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="1018 hpa"
+            android:id="@+id/press"
+            android:layout_column="7"
+            android:textColor="#4eb7f6"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+</TableLayout>

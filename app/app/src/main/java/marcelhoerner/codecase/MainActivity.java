@@ -1,5 +1,6 @@
 package marcelhoerner.codecase;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import logic.CitiesList;
 import logic.GPS;
 import logic.WeatherInfo;
 
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     GPS gps;
 
     WeatherInfo w = new WeatherInfo();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void openList(View view){
+        Intent intent = new Intent(this, CitiesListActivity.class);
+        startActivity(intent);
     }
 
 }
