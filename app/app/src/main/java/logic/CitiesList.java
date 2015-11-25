@@ -9,6 +9,7 @@ package logic;
         import android.widget.TextView;
         import marcelhoerner.codecase.R;
 
+//fills the list with cities around
 public class CitiesList extends ArrayAdapter<String> {
         private final Activity context;
         private String[] name;

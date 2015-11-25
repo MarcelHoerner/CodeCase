@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 
+//gets GPS position of the device
 public class GPS extends Service implements LocationListener {
 
     private final Context context;
@@ -87,24 +88,25 @@ public class GPS extends Service implements LocationListener {
             locationManager.removeUpdates(GPS.this);
     }
 
-    public double getLatitude() {
+    public String getLatitude() {
         if (locationManager != null)
             latitude = location.getLatitude();
 
-        return latitude;
+        return String.valueOf(latitude);
     }
 
-    public double getLongitude() {
+    public String getLongitude() {
         if (locationManager != null)
             longitude = location.getLongitude();
 
-        return longitude;
+        return String.valueOf(longitude);
     }
 
     public boolean canGetLocation() {
         return this.canGetLocation;
     }
 
+    //alertdialog if gps isnt enabled
     public void showSettingsAlert(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setTitle("GPS settings");
