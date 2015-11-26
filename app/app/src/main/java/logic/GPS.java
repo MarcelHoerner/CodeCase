@@ -46,7 +46,6 @@ public class GPS extends Service implements LocationListener {
             if (!GPSEnabled && !networkEnabled) {
 
             } else {
-                this.canGetLocation = true;
                 if (networkEnabled) {
                     locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BETWEEN_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
 
@@ -54,6 +53,7 @@ public class GPS extends Service implements LocationListener {
                         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
                         if (location != null) {
+                            this.canGetLocation = true;
                             latitude = location.getLatitude();
                             longitude = location.getLongitude();
                         }
@@ -68,6 +68,7 @@ public class GPS extends Service implements LocationListener {
                             location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
                             if (location != null) {
+                                this.canGetLocation = true;
                                 latitude = location.getLatitude();
                                 longitude = location.getLongitude();
                             }
@@ -109,9 +110,9 @@ public class GPS extends Service implements LocationListener {
     //alertdialog if gps isnt enabled
     public void showSettingsAlert(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        alertDialog.setTitle("GPS settings");
-        alertDialog.setMessage("GPS is not enabled. Please change your settings.");
-        alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+        alertDialog.setTitle("GPS settings or No GPS");
+        alertDialog.setMessage("Either GPS is not enabled or there is no GPS signal/GPS last location.");
+        alertDialog.setPositiveButton("Change Settings", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
